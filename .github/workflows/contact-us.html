@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      body{
+        background-image: linear-gradient(rgba(35, 46, 172, 0.6)),url("background2.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+      } 
+      .nav{
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        text-align: center;
+        padding: 20px;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Times New Roman', Times, serif;
+        position: relative;
+        background-color:  black;
+      } 
+      .nav ul{
+        justify-content: space-around;
+        display: flex;
+        align-items:center;
+        text-align: center;
+        gap: 40px;
+            list-style: none;
+            text-decoration: none;
+      }
+      .nav ul li{
+        justify-content: center;
+display: flex;
+margin: 0 20px;
+  justify-content: space-around;
+        display: flex;
+        align-items:center;
+        text-align: center;
+position: relative;
+      }
+      .nav a{
+        font-size: 20px;
+        color: white;
+        text-transform: capitalize;
+         text-decoration: none;
+         font-family: sans-serif;
+         justify-content: center;
+         text-align: center;
+         margin: auto;
+      }
+      .nav a:hover{
+        cursor: pointer;
+        color: aqua;
+      } 
+            .nav ul li::after{
+        content: "";
+        height: 3px;
+        width: 0;
+        background-color: #009688;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+      }
+        .nav ul li:hover:after{
+          width: 100%;
+        }
+        .nav figure{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        gap: 10px;
+      }
+      .nav figcaption{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        text-transform: capitalize;
+        color: white;
+      }
+      .nav img{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        border-radius: 50px;
+             text-align: center;
+        justify-content: center;
+        align-items: center;
+      }   
+
+                .nav button{
+            width: 200px;
+            padding: 15px 0;
+            text-align: center;
+            margin: 20px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 1px solid #009688;
+            background-color: #009688;
+            color: white;
+            text-transform: capitalize;
+font-size: 14px;
+          }
+        
+           .nav button:hover{
+            background-color: black;
+           }
+
+           .en{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+           }
+           .en img{
+            height: 100px;
+            width: 100px;
+            margin-top: 3px;
+            border-radius: 50%;
+            border: 2px solid white;
+           }
+           .en  figcaption{
+            text-align: center;
+            align-items: center;
+            font-size: 20px;
+            justify-content: center;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            color: white;
+           }
+           .en figure{
+            gap: 15px;
+           }
+            .form {
+            text-align: center;
+            margin: 0%;
+            background-color: aliceblue;
+            width: 100%; 
+            min-height: 70vh;
+            justify-content: center;
+        } 
+
+        .form h1 {
+            font-size: 18pt;
+            text-transform: capitalize;
+            color: rgb(71, 36, 153);
+            margin-top: 1%;
+        }
+
+        .form p {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(71, 36, 153);
+            text-transform: capitalize;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;    
+            background-color: rgb(0,0,0,0.6); 
+            height: 200px;
+            width: 400px; 
+            margin: auto;
+            border-radius: 25px;
+            border: 1px solid blue;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .input input {
+            width: 38vh;
+            height: 8vh;
+            background-color: white;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 14px;
+            font-size: 20px;
+            color: black; 
+        }
+
+        #submit {
+            background-color: blue;
+            border-radius: 30px;
+            width: 30vh;
+            height: 5vh;
+            color: white;
+            cursor: pointer;
+        }
+
+        .details {
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            margin: 3px;
+            padding: 20px 0;
+            gap: 50px;
+        }
+
+        .details img {
+            text-align: center;
+            width: 10vh;
+            height: 10vh;
+            border-radius: 50px;
+            background-color: aliceblue;
+            padding: 20px;
+        }
+
+        .details figcaption {
+            text-transform: uppercase;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .details p{
+            list-style: none;
+            font-size: 17px;
+            color: white; 
+            text-decoration: none;
+        }
+        .details  a{
+              list-style: none;
+            font-size: 17px;
+            color: white; 
+            text-decoration: none;
+            text-transform: lowercase;
+        }
+
+        .hr {
+            width: 100%;
+            height: 10%;
+            background-color: aqua;
+            margin-top: -1%;
+        }
+
+      
+      
+@media screen and (max-width: 768px) {
+    
+    body {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    
+    .nav {
+        flex-direction: column-reverse; 
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .nav ul li {
+        margin: 5px 0;
+    }
+
+    
+    .en img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .en figcaption {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+  
+    .input {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .input input {
+        width: 90%;
+        height: 50px;
+    }
+
+    
+    .details {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 40px 10px;
+    }
+
+    .details figure {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form h1 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav figcaption {
+        font-size: 18px;
+    }
+    
+    .nav button {
+        width: 150px;
+        padding: 10px 0;
+    }
+}
+      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moherai tech</title>
+</head>
+<body>
+        <nav class="nav">
+<ul>
+    <li><a href="index.html">home</a></li>
+     <li><a href="about-us.html">about us</a></li>
+      <li><a href="blog.html">blog</a></li>
+       <li><a href="services.html">services</a></li>
+       <button type="button"><span></span>order now</button>
+    </ul>
+        <figure>
+    <img src="C:\Users\moherai\Desktop\business.html\moherailogo.jpg">
+    <figcaption>moherai technologies</figcaption>
+    </figure>
+</nav>
+<div class="en">
+<img src="C:\Users\moherai\Desktop\business.html\grap2.jpg">
+<figure>
+  <figcaption>call us today for amazing designs
+ <br> and enqiures from our expert teams </figcaption>
+ </figure>
+</div>
+
+<div class="form">
+        <h1>contact us</h1>
+        <p>for any remarks or question. just write us a message</p>
+        <div class="input">
+            <input type="email" name="username" placeholder=" enter your email address" required><br>
+            <input type="text" placeholder="enter your name" required><br>
+            <input type="button" id="submit" value="submit"><br>
+        </div>
+        <div class="details">
+            <figure>
+                <img src="C:\Users\moherai\Desktop\business.html\image\emaillogo.png">
+                <figcaption>email us:</figcaption>
+                <p><a href="erickmoherai@gmail.com">erickmoherai@gmail.com</a></p>
+            </figure>
+            <figure>
+                <img src="C:\Users\moherai\Desktop\business.html\image\calllogo.png">
+                <figcaption>call us:</figcaption>  
+                <p><a href="tel:+25411778581">0115778581|0799476955</a></p>
+            </figure>
+            <figure>
+                <img src="C:\Users\moherai\Desktop\business.html\image\timelogo.jpg">
+                <figcaption>chat us anytime</figcaption>  
+                <p>24 hours in operation</p>
+            </figure>
+            <figure>
+                <img src="C:\Users\moherai\Desktop\business.html\hou.webp">
+                <figcaption>location</figcaption>
+                <p>nairobi,within all the consituencies</p>
+            </figure>
+        </div>
+        <div class="hr"><hr></div>
+    </div>
+
+</body>
+</html>
