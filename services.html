@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-image: linear-gradient(rgba(10, 8, 122, 0.8)),url("back.jpg");
+            background-position:center ;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: auto;
+        }
+        .nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: black;
+            height: 20vh;
+        }
+        .nav ul{
+            display: flex;
+        gap: 30px;
+        text-decoration: none;  
+        list-style: none;
+        gap: 50px;
+        }
+        .nav ul li{
+            text-align: center;
+            justify-content: space-between;
+             margin-top: 40px;
+        }
+        .nav  ul li a{
+            text-transform: capitalize;
+            color: white;
+            font-size: 20px;
+                text-decoration: none;
+        }
+         .nav  ul li a:hover{
+            background-color: wheat;
+            padding: 10px 20px;
+            color: black;
+        border-radius: 25px;
+         }
+         .nav figure{
+            color: white;
+              border-radius: 25%;
+             margin-top: 9px;
+             margin-left: 70px;
+             text-transform: capitalize;
+         }
+
+         .nav img{
+            border-radius: 25%;  
+         }
+         .pic img{
+    width: auto;
+    height: 70vh;
+    text-align: center;
+    align-items: center;
+    left: 50%;
+    justify-content: center;
+margin-top: 3px;
+    transform: translate(50%);
+    margin-left: 60px;
+    background:transparent;
+    opacity: 0.3;
+    background-image: linear-gradient(rgb(0,0,0,));
+    
+         }
+         .text{
+left: 50%;
+top: 50%;
+transform: translate(-50%);
+position: absolute;
+letter-spacing: 2px;
+    margin-bottom: 20px;
+
+         }
+         .text h1{
+            color: rgb(16, 198, 204);
+            font-size: 25pt;
+            font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+            justify-content: center;
+            align-items: center;
+            vertical-align: middle;
+            text-transform: uppercase;
+            text-overflow: clip;
+          
+         }
+
+            .text p{
+            color: white;
+            font-size: 14px;
+            font-family: sans-serif;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            vertical-align: middle;
+            margin-right: 50%;
+            left: 50%;
+            transform: translate(50%);
+         }
+         .beb{
+   background: rgba(69, 7, 150, 0.1);
+   letter-spacing: 2px;
+            opacity: 1;
+         }
+.beb h2{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: rgb(12, 212, 212);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    text-decoration: dashed;
+}
+.beb p{
+      text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; 
+    font-family: sans-serif;
+    color: azure;
+    margin-top: 12px;
+    letter-spacing: 2px;
+}
+
+.grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 40px 5%;
+            background: var(--primary-blue);
+        }
+
+       .grid details {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+      .grid  summary {
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            outline: none;
+            text-align: center;
+            color: rgb(16, 195, 201);
+            align-items: center;
+        }
+
+        .grid li{
+            font-size: 0.9rem;
+            padding: 5px 0;
+            border-left: 2px solid rgba(255,255,255,0.3);
+            margin-top: 5px;
+            color: white;
+            list-style: none;
+            margin-left: 20px;
+            font-size: 16px;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        .last{
+            
+            display: flex;
+            margin-top: 2px;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+            padding: 10px;
+            gap: 15px;
+            margin-top: 35px;
+        }
+      
+        .last img{
+        opacity: 1;    
+        height: 200px;
+        width: 300px;
+  text-align: center;
+            align-items: center;
+        }
+        .last p{
+            color: azure;
+            margin-right: 15px;
+            font-size: 14px;
+            text-align: center;
+            align-items: center;
+        }
+        #h3{
+            text-align: center;
+            align-items: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+            color: rgb(18, 184, 196);
+            letter-spacing: 2px;
+            font-family: sans-serif;
+        }
+        </style>
+                        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moherai tech</title>
+</head>
+<body>
+        <nav class="nav">
+<ul>
+    <li><a href="index.html">home</a></li>
+     <li><a href="about-us.html">about us</a></li>
+      <li><a href="blog.html">blog</a></li>
+        <li><a href="contact-us.html">contact us</a></li>
+        <figure>
+        <img src="moherailogo.jpg" style="width: 30px;height: 30px;">
+          <figcaption>moherai technologies</figcaption>
+        </figure>
+    </ul>
+   </nav>
+
+   <div class="pic">
+    <img src="page.jpg">
+    <div class="text">
+    <h1>our services</h1>
+    <p>we deal with technology services and vegetable goods</p>
+    </div>
+
+    <div class="beb">
+        <h2>Bridging the Digital & Agricultural Gap.</h2>
+        <p>We are building the marketplace of the future. <br>
+            We provide the technical branding and web tools for local farmers to digitize their inventory,<br>
+             while providing consumers with a high-speed, tech-backed delivery system for fresh produce.</p>
+        </div>
+
+        <div class="grid">
+            <details>
+                <summary>graphic design</summary>
+                <ul>
+                    <li>poster design</li>
+                     <li>bronchure design</li>
+                      <li>flyer design</li>
+                       <li>mock up logos</li>
+                        <li>business card design</li>
+                         <li>wedding cards</li>
+                          <li>books&magazines</li>
+                           <li>motion graphics</li>
+                </ul>
+                <em>price may vary</em>
+                </details>
+
+                <details>
+                       <summary>website development</summary>
+                <ul>
+                    <li>business websites</li>
+                     <li>website maintenance</li>
+                      <li>website integration</li>
+                       <li>search engine optimazation</li>
+                        <li>website review</li>
+                         <li>wedding cards</li>
+                </ul>
+                <em>price may vary</em>
+                    </details>
+
+                     <details>
+                       <summary>groceries stuffs</summary>
+                <ul>
+                    <li>tomatoes</li>
+                     <li>onions</li>
+                      <li>potatoes</li>
+                       <li>cucumbers</li>
+                        <li>lemons</li>
+                         <li>giggers</li>
+                </ul>
+
+                <div class="veg">
+            <details>
+                <summary>vegetables</summary>
+                <ul>
+                    <li>kales</li>
+                    <li>cabbages</li>
+                     <li>manangu</li>
+                    <li>all sorts....</li>
+                </ul>
+                <em>price may vary</em>
+                </details>
+                </div>
+                    </details>
+
+            <details>
+                <summary>view more</summary>
+                  <ul>
+                    <li>cctv installation</li>
+                    <li>ui and ux design for mobile</li>
+                     <li>network administrators</li>
+                    <li>hardware&software troubleshooting</li>
+                    <li>system design</li>
+                    <li>animations</li>
+                     <li>app development(web apps)</li>
+                </ul>
+            </details>
+            </div>
+             <h3 id="h3">disclaimer and method of payment</h3> 
+<div class="last">
+    <p><i style="color: aqua;">groceries</i><br>
+for grocery stuffs..goods are delivered exactly after 30mins to <br>
+    60minutes after order is placed and payment done..<br>
+ <img src="fruits.jpg">
+ </p>
+<p>
+     <i style="color: aqua;">website and software design</i><br>
+    Our team begins project development upon receipt of a 50% deposit. <br>
+    Full copyright and system access are transferred to the client<br>
+     upon final payment settlement.<br>
+<img src="co2.webp">
+</p>
+</div>
+
+
+
+</body>
+</html>

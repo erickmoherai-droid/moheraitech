@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-image:linear-gradient(rgba(0,0,0,0.8)),url("background2.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            bottom: -100px;
+            left: 50%;
+            transform: translate(-50%);
+            animation: pop 4s forwards;
+        }
+        @keyframes pop{
+            0%{
+                bottom: -100px;
+                opacity: 0;
+            }
+
+               25%{
+                bottom: -30px;
+            }
+
+               50%{
+                bottom: -30px;
+            }
+
+               75%{
+                bottom: -30px;
+            }
+               100%{
+                bottom: -100px;
+                opacity: 1;
+            }
+        }
+        .nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease;
+            backdrop-filter: blur(16px);
+        }
+
+          .nav:hover {
+            cursor: progress;
+            transform: scale(1.05); 
+            border-radius: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            transition: 0.35s ease;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav ul{
+display: flex;
+gap: 30px;
+margin-top: 12px;
+list-style: none;
+text-decoration: none;
+        }
+   .nav ul li{
+    text-align: center;
+align-items: center;
+justify-content: space-evenly;
+margin: 20px;
+text-decoration: none;
+   }   
+   .nav ul li a{
+    text-transform: capitalize;
+    font-weight: 100;
+    font-size: 20px;
+    color: wheat;
+    text-decoration: none;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+   }  
+     .nav ul li a:hover{
+    color: white;
+   } 
+   .h1{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+   }
+   .h1 h1{
+    text-transform: capitalize;
+    font-size: 27pt;
+    text-decoration: underline;
+    color: aliceblue;
+   }
+   .h1 p{
+    text-transform: capitalize;
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: aqua;
+    align-items: center;
+    line-height: 23px;
+    animation: slider 3s forwards;
+   }
+
+@keyframes slider{
+    from{
+        transform: translate(-50px);
+        color:white;
+        opacity: 0;
+    }
+    to{
+        transform: translate(0);
+        color: aqua;
+        opacity: 1;
+    }
+}
+   .h2{
+     text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content:center;
+    gap: 40px;
+    text-transform: capitalize;
+    font-size: 14px;
+    color:aqua;
+   }
+
+   .h2 img{
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    padding: 1px;
+    border: 2px solid black;
+    display: flex;
+    margin: auto;
+    animation: rotate 9s forwards;
+   }
+   @keyframes rotate{
+    from{
+        transform: rotate(0deg);
+       transform:  translate(-100px);
+       opacity: 0;
+    
+    }
+    to{
+        transform: rotate(360deg);
+        transform: skew(90deg);
+       transform:  translate(0);
+       opacity: 7;
+    }
+   }
+   .h2 figcaption{
+    text-align: center;
+    margin: auto;
+    align-items: center;
+    margin-top: 4px;
+   }
+   .head{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 20vh;
+    width: 140vh;
+    background: turquoise;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 25px;
+    animation: r 4s forwards;
+   }
+   .head:hover{
+    background-color: rgba(0,0,0,0.8);
+    color: aliceblue;
+   }
+   @keyframes r{
+    from{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+   }
+   .head figcaption{
+     display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    padding: 10px;
+    align-items: flex-start;
+   }
+   .head p{
+         display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+   }
+
+        .logo{
+             text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        display:  flex;
+        gap: 40px;
+    transition:  4s ease;
+    animation: pop  3s ease linear;
+      }  
+      .logo:hover{
+        cursor: pointer;
+      }
+      @keyframes pop{
+        from{
+            transform: translate(-100px);
+            opacity: 0;
+        }
+        to{
+            transform: translate(0);
+            opacity: 1;
+        }
+      }
+      
+      .logo img{
+         width: 60px;
+        height: 60px;
+          border-radius: 50px;
+           border: 3px solid white;
+      } 
+      .logo figcaption{
+        color: aliceblue;
+        font-style: normal;
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 768px) {
+   
+    .h1 {
+        padding: 18px;
+    }
+
+
+    .h2 {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .h2 figure {
+        width: 40%; 
+        min-width: 160px;
+    }
+
+  
+    .head {
+        width: 95%;
+        height: auto; 
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+  
+    hr {
+        width: 90% !important;
+        margin: 40px auto !important;
+    }
+
+   
+    .logo {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+
+    .logo figure {
+        width: 45%; 
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .h1 h1 {
+        font-size: 18px;
+    }
+
+    .nav ul {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .nav ul li a {
+        font-size: 16px;
+        padding: 5px 8px;
+    }
+
+    .h2 figure, .logo figure {
+        width: 100%; 
+    }
+}
+
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moherai tech</title>
+</head>
+<body>
+        <nav class="nav">
+<ul>
+    <li><a href="index.html">home</a></li>
+      <li><a href="blog.html">blog</a></li>
+       <li><a href="services.html">services</a></li>
+        <li><a href="contact-us.html">contact us</a></li>
+    </ul>
+        </nav>
+        <div class="h1">
+            <h1>about moherai technologies</h1>
+         <p>
+            our company is faster growing one and was established recently in december,2025.<br>
+            We are dedicated to offering high-quality services by providing modern graphic 
+            <br>and web design solutions that help our clients maximize their profits. 
+            <br>moreover,we offer a complimentary one-year branding package for our clients products
+            </p>
+            </div>
+
+            <div class="h2">
+                <figure>
+                <img src="lap.jfif">
+                 <figcaption>ui ux design,content improvement and seo</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="grap2.jpg">
+                    <figcaption>motion designs</figcaption>
+                </figure>
+
+                <figure>
+                <img src="code.webp">
+                  <figcaption>website development</figcaption>
+</figure>
+
+                <figure>
+                <img src="ma.jpg">
+                  <figcaption>website maintenance</figcaption>
+                </figure>
+                </div>
+
+                <div class="head">
+                <figure>
+                    <figcaption>integrity</figcaption>
+                    <p>create visual appealing items for global recognition</p>
+                    </figure>
+
+                        <figure>
+                    <figcaption>vision</figcaption>
+                    <p>to be a bridge between clients responsibility and network</p>
+                    </figure>
+                        <figure>
+                    <figcaption>mission</figcaption>
+                    <p>technology to the world</p>
+                    </figure>
+                </div>
+                <hr style="border: 1px solid;height: 2px; width: 900px; border-radius: 25px;background-color: rgba(0,0,0,0.8); align-items: center;text-align: center;margin: auto;margin: 20px 17%;justify-content: center;"></hr>
+               
+                <div class="logo">  
+                <figure>
+    <img src="moherailogo.jpg">
+    <figcaption>technology to the world</figcaption>
+    </figure>
+
+                    <figure>
+    <img src="peopleicon1.png">
+    <figcaption>around 760+ clients</figcaption>
+    </figure>
+
+                    <figure>
+    <img src="traineesicons.png">
+    <figcaption>20staff members</figcaption>
+    </figure>
+
+                    <figure>
+    <img src="courseicon.png">
+    <figcaption>5669+ completed projects</figcaption>
+    </figure>
+    </div>
+</body>
+</html>
