@@ -202,6 +202,93 @@ letter-spacing: 2px;
             letter-spacing: 2px;
             font-family: sans-serif;
         }
+
+    
+
+@media screen and (max-width: 1024px) {
+    .nav ul {
+        gap: 20px;
+    }
+    .text {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust Navigation */
+    .nav {
+        height: auto;
+        padding: 20px 0;
+    }
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav ul li {
+        margin-top: 10px;
+    }
+    .nav figure {
+        margin-left: 0;
+    }
+
+    
+    .pic img {
+        height: 50vh;
+        width: 100%;
+        transform: none;
+        margin-left: 0;
+        object-fit: cover;
+    }
+    .text {
+        position: relative; 
+        transform: none;
+        left: 0;
+        top: 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .text p {
+        transform: none;
+        margin-right: 0;
+        left: 0;
+    }
+
+    
+    .beb p {
+        padding: 0 15px;
+        font-size: 13px;
+    }
+
+    
+    .grid {
+        padding: 20px 5%;
+    }
+
+
+    .last {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .last img {
+        width: 90%;
+        height: auto;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .text h1 {
+        font-size: 20pt;
+    }
+    .beb h2 {
+        font-size: 18px;
+    }
+    .grid summary {
+        font-size: 14px;
+    }
+}
         </style>
                         
     <meta charset="UTF-8">
