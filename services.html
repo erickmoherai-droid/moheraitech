@@ -1,412 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
+            box-sizing: border-box;
         }
-        body{
-            background-image: linear-gradient(rgba(10, 8, 122, 0.8)),url("back.jpg");
-            background-position:center ;
+
+        body {
+            background-image: linear-gradient(rgba(10, 8, 122, 0.85), rgba(10, 8, 122, 0.85)), url("back.jpg");
+            background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
+            background-attachment: fixed;
             width: 100%;
-            height: auto;
+            min-height: 100vh;
+            font-family: sans-serif;
+            color: white;
         }
-        .nav{
+        .nav {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: black;
-            height: 20vh;
-        }
-        .nav ul{
-            display: flex;
-        gap: 30px;
-        text-decoration: none;  
-        list-style: none;
-        gap: 50px;
-        }
-        .nav ul li{
-            text-align: center;
             justify-content: space-between;
-             margin-top: 40px;
+            align-items: center;
+            background-color: black;
+            padding: 15px 5%;
+            min-height: 12vh;
         }
-        .nav  ul li a{
+
+        .nav ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        .nav ul li a {
             text-transform: capitalize;
             color: white;
-            font-size: 20px;
-                text-decoration: none;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: all 0.3s ease;
         }
-         .nav  ul li a:hover{
+
+        .nav ul li a:hover {
             background-color: wheat;
-            padding: 10px 20px;
             color: black;
-        border-radius: 25px;
-         }
-         .nav figure{
+            border-radius: 25px;
+        }
+
+        .nav figure {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             color: white;
-              border-radius: 25%;
-             margin-top: 9px;
-             margin-left: 70px;
-             text-transform: capitalize;
-         }
+            text-transform: capitalize;
+            margin-right: auto;
+        }
 
-         .nav img{
-            border-radius: 25%;  
-         }
-         .pic img{
-    width: auto;
-    height: 70vh;
-    text-align: center;
-    align-items: center;
-    left: 50%;
-    justify-content: center;
-margin-top: 3px;
-    transform: translate(50%);
-    margin-left: 60px;
-    background:transparent;
-    opacity: 0.3;
-    background-image: linear-gradient(rgb(0,0,0,));
-    
-         }
-         .text{
-left: 50%;
-top: 50%;
-transform: translate(-50%);
-position: absolute;
-letter-spacing: 2px;
-    margin-bottom: 20px;
+        .nav img {
+            border-radius: 25%;
+            object-fit: cover;
+        }
 
-         }
-         .text h1{
-            color: rgb(16, 198, 204);
-            font-size: 25pt;
-            font-family: 'Courier New', Courier, monospace;
-                text-align: center;
+        
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            display: flex;
             justify-content: center;
             align-items: center;
-            vertical-align: middle;
-            text-transform: uppercase;
-            text-overflow: clip;
-          
-         }
+        }
 
-            .text p{
-            color: white;
-            font-size: 14px;
-            font-family: sans-serif;
+        .pic-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+        }
+
+        .text {
+            position: absolute;
             text-align: center;
-            justify-content: center;
-            align-items: center;
-            vertical-align: middle;
-            margin-right: 50%;
-            left: 50%;
-            transform: translate(50%);
-         }
-         .beb{
-   background: rgba(69, 7, 150, 0.1);
-   letter-spacing: 2px;
-            opacity: 1;
-         }
-.beb h2{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: rgb(12, 212, 212);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    text-decoration: dashed;
-}
-.beb p{
-      text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px; 
-    font-family: sans-serif;
-    color: azure;
-    margin-top: 12px;
-    letter-spacing: 2px;
-}
+            letter-spacing: 2px;
+            padding: 0 20px;
+        }
 
-.grid {
+        .text h1 {
+            color: rgb(16, 198, 204);
+            font-size: 3rem;
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .text p {
+            color: white;
+            font-size: 18px;
+            text-transform: capitalize;
+        }
+
+    
+        .beb {
+            background: rgba(69, 7, 150, 0.2);
+            letter-spacing: 1px;
+            padding: 40px 10%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .beb h2 {
+            color: rgb(12, 212, 212);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .beb p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: azure;
+        }
+
+        
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            padding: 40px 5%;
-            background: var(--primary-blue);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 50px 5%;
         }
 
-       .grid details {
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 5px;
+        .grid details {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
         }
 
-      .grid  summary {
+        .grid details[open] {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .grid summary {
             font-weight: bold;
             cursor: pointer;
             text-transform: uppercase;
             outline: none;
-            text-align: center;
             color: rgb(16, 195, 201);
-            align-items: center;
-        }
-
-        .grid li{
-            font-size: 0.9rem;
-            padding: 5px 0;
-            border-left: 2px solid rgba(255,255,255,0.3);
-            margin-top: 5px;
-            color: white;
-            list-style: none;
-            margin-left: 20px;
             font-size: 16px;
-            text-transform: capitalize;
-            text-decoration: none;
+            letter-spacing: 1px;
+            list-style: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .last{
-            
-            display: flex;
-            margin-top: 2px;
-            justify-content: space-around;
-            text-align: center;
-            align-items: center;
-            padding: 10px;
-            gap: 15px;
-            margin-top: 35px;
+        .grid ul {
+            list-style: none;
+            margin: 15px 0;
+            padding-left: 10px;
         }
-      
-        .last img{
-        opacity: 1;    
-        height: 200px;
-        width: 300px;
-  text-align: center;
-            align-items: center;
+
+        .grid li {
+            font-size: 15px;
+            padding: 6px 0;
+            border-left: 2px solid rgba(16, 195, 201, 0.5);
+            color: white;
+            padding-left: 15px;
+            text-transform: capitalize;
+            margin-bottom: 4px;
         }
-        .last p{
-            color: azure;
-            margin-right: 15px;
-            font-size: 14px;
-            text-align: center;
-            align-items: center;
+
+        .grid em {
+            display: block;
+            margin-top: 15px;
+            font-size: 13px;
+            color: wheat;
+            font-style: italic;
         }
-        #h3{
+
+        
+        .veg {
+            margin-top: 15px;
+            padding-left: 5px;
+        }
+
+        .veg details {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        
+        #h3 {
             text-align: center;
-            align-items: center;
             text-transform: uppercase;
             text-decoration: underline;
             color: rgb(18, 184, 196);
             letter-spacing: 2px;
-            font-family: sans-serif;
+            margin-top: 40px;
+            font-size: 22px;
         }
 
-    
+        .last {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            padding: 40px 5%;
+            gap: 30px;
+        }
 
-@media screen and (max-width: 1024px) {
-    .nav ul {
-        gap: 20px;
-    }
-    .text {
-        width: 90%;
-    }
-}
+        .last-card {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-@media screen and (max-width: 768px) {
-    /* Adjust Navigation */
-    .nav {
-        height: auto;
-        padding: 20px 0;
-    }
-    .nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav ul li {
-        margin-top: 10px;
-    }
-    .nav figure {
-        margin-left: 0;
-    }
+        .last-card i {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 15px;
+        }
 
-    
-    .pic img {
-        height: 50vh;
-        width: 100%;
-        transform: none;
-        margin-left: 0;
-        object-fit: cover;
-    }
-    .text {
-        position: relative; 
-        transform: none;
-        left: 0;
-        top: 0;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.6);
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .text p {
-        transform: none;
-        margin-right: 0;
-        left: 0;
-    }
+        .last-card p {
+            color: azure;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
 
-    
-    .beb p {
-        padding: 0 15px;
-        font-size: 13px;
-    }
-
-    
-    .grid {
-        padding: 20px 5%;
-    }
+        .last-card img {
+            height: 200px;
+            width: 100%;
+            max-width: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
 
 
-    .last {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .last img {
-        width: 90%;
-        height: auto;
-        margin-top: 15px;
-    }
-}
+        
+        
+        @media screen and (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 20px;
+            }
 
-@media screen and (max-width: 480px) {
-    .text h1 {
-        font-size: 20pt;
-    }
-    .beb h2 {
-        font-size: 18px;
-    }
-    .grid summary {
-        font-size: 14px;
-    }
-}
-        </style>
+            .nav figure {
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .nav ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .hero-section {
+                height: 40vh;
+            }
+
+            .text h1 {
+                font-size: 2.2rem;
+            }
+
+            .last {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        
+        @media screen and (max-width: 480px) {
+            .nav ul {
+                gap: 10px;
+            }
+            
+            .nav ul li a {
+                font-size: 15px;
+                padding: 6px 10px;
+            }
+
+            .text h1 {
+                font-size: 1.8rem;
+            }
+
+            .text p {
+                font-size: 14px;
+            }
+
+            .beb h2 {
+                font-size: 18px;
+            }
+
+            .beb p {
+                font-size: 14px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                padding: 30px 4%;
+            }
+
+            #h3 {
+                font-size: 18px;
+                padding: 0 10px;
+            }
+        }
+    </style>
                         
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>moherai tech</title>
+    <title>Moherai Tech - Services</title>
 </head>
 <body>
-        <nav class="nav">
-<ul>
-    <li><a href="index.html">home</a></li>
-     <li><a href="about-us.html">about us</a></li>
-      <li><a href="blog.html">blog</a></li>
-        <li><a href="contact-us.html">contact us</a></li>
-        <figure>
-        <img src="moherailogo.jpg" style="width: 30px;height: 30px;">
-          <figcaption>moherai technologies</figcaption>
-        </figure>
-    </ul>
-   </nav>
 
-   <div class="pic">
-    <img src="page.jpg">
-    <div class="text">
-    <h1>our services</h1>
-    <p>we deal with technology services and vegetable goods</p>
+    <nav class="nav">
+        <figure>
+            <img src="moherailogo.jpg" alt="Moherai Logo" style="width: 35px; height: 35px;">
+            <figcaption>moherai technologies</figcaption>
+        </figure>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about-us.html">about us</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="contact-us.html">contact us</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-section">
+        <img src="page.jpg" class="pic-bg" alt="Services Background">
+        <div class="text">
+            <h1>our services</h1>
+            <p>we deal with technology services and vegetable goods</p>
+        </div>
     </div>
 
     <div class="beb">
         <h2>Bridging the Digital & Agricultural Gap.</h2>
-        <p>We are building the marketplace of the future. <br>
-            We provide the technical branding and web tools for local farmers to digitize their inventory,<br>
-             while providing consumers with a high-speed, tech-backed delivery system for fresh produce.</p>
+        <p>
+            We are building the marketplace of the future. <br>
+            We provide the technical branding and web tools for local farmers to digitize their inventory, <br>
+            while providing consumers with a high-speed, tech-backed delivery system for fresh produce.
+        </p>
+    </div>
+
+    <div class="grid">
+        <details>
+            <summary>graphic design</summary>
+            <ul>
+                <li>poster design</li>
+                <li>brochure design</li>
+                <li>flyer design</li>
+                <li>mockup logos</li>
+                <li>business card design</li>
+                <li>wedding cards</li>
+                <li>books & magazines</li>
+                <li>motion graphics</li>
+            </ul>
+            <em>prices may vary</em>
+        </details>
+
+        <details>
+            <summary>website development</summary>
+            <ul>
+                <li>business websites</li>
+                <li>website maintenance</li>
+                <li>website integration</li>
+                <li>search engine optimization</li>
+                <li>website review</li>
+                <li>wedding invitations</li>
+            </ul>
+            <em>prices may vary</em>
+        </details>
+
+        <details>
+            <summary>grocery items</summary>
+            <ul>
+                <li>tomatoes</li>
+                <li>onions</li>
+                <li>potatoes</li>
+                <li>cucumbers</li>
+                <li>lemons</li>
+                <li>ginger</li>
+            </ul>
+
+            <div class="veg">
+                <details>
+                    <summary>vegetables</summary>
+                    <ul>
+                        <li>kales</li>
+                        <li>cabbages</li>
+                        <li>managu</li>
+                        <li>all sorts...</li>
+                    </ul>
+                    <em>prices may vary</em>
+                </details>
+            </div>
+        </details>
+
+        <details>
+            <summary>view more</summary>
+            <ul>
+                <li>CCTV installation</li>
+                <li>UI and UX design for mobile</li>
+                <li>network administration</li>
+                <li>hardware & software troubleshooting</li>
+                <li>system design</li>
+                <li>animations</li>
+                <li>app development (web apps)</li>
+            </ul>
+        </details>
+    </div>
+
+    <h3 id="h3">disclaimer and method of payment</h3> 
+    
+    <div class="last">
+        <div class="last-card">
+            <p>
+                <i style="color: aqua;">groceries</i>
+                For grocery items, goods are delivered exactly 30 to 60 minutes after an order is successfully placed and payment is verified.
+            </p>
+            <img src="fruits.jpg" alt="Fresh Fruits and Veggies">
         </div>
 
-        <div class="grid">
-            <details>
-                <summary>graphic design</summary>
-                <ul>
-                    <li>poster design</li>
-                     <li>bronchure design</li>
-                      <li>flyer design</li>
-                       <li>mock up logos</li>
-                        <li>business card design</li>
-                         <li>wedding cards</li>
-                          <li>books&magazines</li>
-                           <li>motion graphics</li>
-                </ul>
-                <em>price may vary</em>
-                </details>
-
-                <details>
-                       <summary>website development</summary>
-                <ul>
-                    <li>business websites</li>
-                     <li>website maintenance</li>
-                      <li>website integration</li>
-                       <li>search engine optimazation</li>
-                        <li>website review</li>
-                         <li>wedding cards</li>
-                </ul>
-                <em>price may vary</em>
-                    </details>
-
-                     <details>
-                       <summary>groceries stuffs</summary>
-                <ul>
-                    <li>tomatoes</li>
-                     <li>onions</li>
-                      <li>potatoes</li>
-                       <li>cucumbers</li>
-                        <li>lemons</li>
-                         <li>giggers</li>
-                </ul>
-
-                <div class="veg">
-            <details>
-                <summary>vegetables</summary>
-                <ul>
-                    <li>kales</li>
-                    <li>cabbages</li>
-                     <li>manangu</li>
-                    <li>all sorts....</li>
-                </ul>
-                <em>price may vary</em>
-                </details>
-                </div>
-                    </details>
-
-            <details>
-                <summary>view more</summary>
-                  <ul>
-                    <li>cctv installation</li>
-                    <li>ui and ux design for mobile</li>
-                     <li>network administrators</li>
-                    <li>hardware&software troubleshooting</li>
-                    <li>system design</li>
-                    <li>animations</li>
-                     <li>app development(web apps)</li>
-                </ul>
-            </details>
-            </div>
-             <h3 id="h3">disclaimer and method of payment</h3> 
-<div class="last">
-    <p><i style="color: aqua;">groceries</i><br>
-for grocery stuffs..goods are delivered exactly after 30mins to <br>
-    60minutes after order is placed and payment done..<br>
- <img src="fruits.jpg">
- </p>
-<p>
-     <i style="color: aqua;">website and software design</i><br>
-    Our team begins project development upon receipt of a 50% deposit. <br>
-    Full copyright and system access are transferred to the client<br>
-     upon final payment settlement.<br>
-<img src="co2.webp">
-</p>
-</div>
-
-
+        <div class="last-card">
+            <p>
+                <i style="color: aqua;">website and software design</i>
+                Our team begins project development upon receipt of a 50% deposit. Full copyright and system access are transferred to the client upon final payment settlement.
+            </p>
+            <img src="co2.webp" alt="Coding Production View">
+        </div>
+    </div>
 
 </body>
 </html>

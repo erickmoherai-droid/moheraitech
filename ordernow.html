@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        
+        #beb {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: blue;
+            padding: 1rem;
+            color: white;
+        }
+
+        
+        #demo {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #demo li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        
+        .hidden {
+            display: none !important;
+        }
+
+        
+        button {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+    
+        @media (max-width: 768px) {
+            #beb {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            #demo {
+                flex-direction: column;
+                width: 100%;
+                padding-top: 1rem;
+            }
+            #demo li {
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body id="de">
+
+    <nav id="beb">
+        <button onclick="toggleMenu()"><i class="fa fa-bars"></i> Menu</button>
+        
+        <ul id="demo" class="hidden">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+
+        <button onclick="goToContact()">Back to contact page!</button>
+    </nav>
+
+    <script>
+        
+        function goToContact() {
+            window.location.href = "contact-us.html"; 
+        
+        }
+
+    
+        function toggleMenu() {
+            let demo = document.getElementById("demo");
+            demo.classList.toggle("hidden");
+        }
+        window.addEventListener('click',(event)=>{
+            event.preventDefault();
+            alert("go back,this page is under maintainance!!!!click contact button to proceed");
+        });
+    </script>
+</body>
+</html>
