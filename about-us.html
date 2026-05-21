@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(224, 16, 138, 0.5)), url("fruits.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            width: 100%;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            transition: 0.3s ease;
+            backdrop-filter: blur(16px);
+            background-color: rgba(0, 0, 0, 0.85);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav:hover {
+            cursor: progress;
+            transform: scale(1.01); 
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .nav figure {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav figcaption {
+            font-size: 20px;
+            text-transform: capitalize;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            border-radius: 50%;
+            object-fit: cover;
+        }   
+
+        .nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav ul li a {
+            text-transform: capitalize;
+            font-size: 18px;
+            color: wheat;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }   
+
+        .nav ul li a:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        } 
+
+        
+        .h1 {
+            padding: 40px 5%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+            color: white;
+        }
+
+        .h1 concept-wrapper {
+            flex: 1;
+        }
+
+        .h1 h1 {
+            text-transform: capitalize;
+            font-size: 2.5rem;
+            text-decoration: underline;
+            color: rgb(17, 223, 127);
+            margin-bottom: 20px;
+        }
+
+        .h1 figcaption p {  
+            font-family: Verdana, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            animation: slider 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .image-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .h1 img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            animation: r 4s infinite ease-in-out;
+        }
+
+        @keyframes r {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(2); }
+        }
+
+        @keyframes slider {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        
+        .h2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            padding: 40px 5%;
+            text-transform: capitalize;
+            color: aqua;
+        }
+
+        .h2 figure {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid rgb(8, 139, 226);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .h2 figure:hover {
+            transform: translateY(-5px);
+        }
+
+        .h2 img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .h2 figcaption {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+    
+        .de {
+            padding: 40px 5%;
+            color: white;
+        }
+
+        .de-container {
+            display: flex;
+            gap: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid rgb(10, 93, 218);
+        }
+
+        .de-block {
+            flex: 1;
+        }
+
+        .de h1, .de h2 {
+            color: rgb(10, 93, 218);
+            font-variant: small-caps;
+            font-weight: bold;
+            font-size: 28px;
+            text-decoration: underline dotted;
+            margin-bottom: 15px;
+        }
+
+        .de ul {
+            list-style: none;
+        }
+
+        .de li {
+            color: #ffb74d;
+            font-size: 20px;
+            font-variant: small-caps;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .de p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 5px;
+        }
+
+        .de button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background-color: transparent;
+            border: 2px solid palevioletred;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .de button:hover {
+            background-color: palevioletred;
+        }
+
+        .de button a {
+            font-size: 16px;
+            color: white;
+            text-transform: capitalize;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .head {
+            margin: 40px auto;
+            max-width: 900px;
+            width: 90%;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .head:hover {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .head details {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .head details:last-child {
+            border-bottom: none;
+        }
+
+        .head summary {
+            color: #38b6ff;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+            padding: 5px;
+        }
+
+        .head p {
+            color: white;
+            margin-top: 10px;
+            line-height: 1.6;
+            padding-left: 15px;
+        }
+
+
+        hr {
+            border: none;
+            height: 2px; 
+            max-width: 900px; 
+            width: 90%;
+            background-color: rgba(255,255,255,0.3); 
+            margin: 40px auto;
+        }
+
+        
+        .logo {  
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 0 5% 60px 5%;
+            text-align: center;
+        }
+
+        .logo figure {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo figure:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .logo figcaption {
+            color: aliceblue;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+
+        
+        @media screen and (max-width: 992px) {
+            .h1 {
+                flex-direction: column;
+                text-align: center;
+            }
+            .h1 h1 {
+                font-size: 2.2rem;
+            }
+            .de-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        
+        @media screen and (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            .nav ul {
+                width: 100%;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .nav ul li a {
+                font-size: 16px;
+                padding: 6px 10px;
+            }
+            .h1 h1 {
+                font-size: 1.8rem;
+            }
+            .h1 figcaption p {
+                font-size: 16px;
+            }
+            .h1 img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+    
+        @media screen and (max-width: 480px) {
+            .nav figcaption {
+                font-size: 18px;
+            }
+            .nav ul li a {
+                font-size: 14px;
+                padding: 5px 8px;
+            }
+            .h2 {
+                grid-template-columns: 1fr;
+            }
+            .logo {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            .de h1, .de h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moherai Tech</title>
+</head>
+
+<body>
+    <nav class="nav">    
+        <figure>
+            <img src="moherailogo.jpg" alt="Moherai Logo">
+            <figcaption>moherai technologies</figcaption>
+        </figure>
+        <ul>
+            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="blog.html"><i class="fa fa-book"></i> Blog</a></li>
+            <li><a href="services.html"><i class="fa fa-gears"></i> Services</a></li>
+            <li><a href="contact-us.html"><i class="fa fa-phone"></i> Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="h1">
+        <div class="concept-wrapper">
+            <h1>about moherai technologies</h1>
+            <figcaption>
+                <p>
+                    Our company is a fast-growing one and was established recently in December, 2025.<br>
+                    We are dedicated to offering high-quality services by providing modern graphic 
+                    and web design solutions that help our clients maximize their profits.<br>
+                    Moreover, we offer a complimentary one-year branding package for our clients' products.<br>
+                    We are excited to also inform our clients that we provide fresh quality food stuffs to them directly from the farm.<br>
+                    Get in touch with us now to benefit from our great services...
+                </p>
+            </figcaption>
+        </div>
+        <div class="image-group">
+            <img src="fruits.jpg">
+            <img src="code.webp" alt="Code sample snippet">
+        </div>
+    </div>
+
+    <div class="h2">
+        <figure>
+            <img src="lap.jfif" alt="UI UX Setup">
+            <figcaption>UI and UX design, content improvement and SEO</figcaption>
+        </figure>
+
+        <figure>
+            <img src="grap2.jpg" alt="Motion Graphics">
+            <figcaption>motion designs</figcaption>
+        </figure>
+
+        <figure>
+            <img src="code.webp" alt="Web Development">
+            <figcaption>website development</figcaption>
+        </figure>
+
+        <figure>
+            <img src="ma.jpg" alt="Maintenance Ops">
+            <figcaption>website maintenance</figcaption>
+        </figure>
+    </div>
+
+    <div class="de">
+        <div class="de-container">
+            <div class="de-block">
+                <h1>why choose us:</h1>
+                <ul>
+                    <li>advanced technology:</li>
+                    <p>We offer modern designs that align with future technology.</p>
+                    
+                    <li>strategic planning:</li>
+                    <p>We are dedicated to offering services and food stuffs that match your budget.</p>
+                    
+                    <li>customer services:</li>
+                    <p>We provide our clients free delivery services, alongside CCTV installation and computer troubleshooting where necessary.</p>
+                    
+                    <li>client local taste and preferences:</li>
+                    <p>Our company is flexible in terms of technology changes, hence quick to adapt to clients' needs.</p>
+                </ul>
+            </div>
+
+            <div class="de-block"> 
+                <h2>be part of us today</h2>
+                <p>
+                    We believe technology and groceries are powerful tools that can connect us, entertain us, and empower us.<br><br>
+                    We're committed to providing you with the connection you need to live life to the fullest.
+                </p>
+                <button><a href="services.html">learn more</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="head">
+        <details>
+            <summary>integrity</summary>
+            <p>Creating visually appealing solutions for global recognition.</p>
+        </details>
+
+        <details>
+            <summary>vision</summary>
+            <p>To be a bridge between our clients' core responsibilities and modern network infrastructures.</p>
+        </details>
+
+        <details>
+            <summary>mission</summary>
+            <p>
+                Empowering businesses to thrive with secure and dependable internet solutions.<br>
+                Enriching homes with seamless connectivity for entertainment, communication, and a smarter way of living.
+            </p>
+        </details>
+    </div>
+
+    <hr>
+               
+    <div class="logo">  
+        <figure>
+            <img src="moherailogo.jpg" alt="Moherai Logo Footer">
+            <figcaption>technology to the world</figcaption>
+        </figure>
+
+        <figure>
+            <img src="peopleicon1.png" alt="Clients Icon">
+            <figcaption>around 760+ clients</figcaption>
+        </figure>
+
+        <figure>
+            <img src="traineesicons.png" alt="Staff Icon">
+            <figcaption>20 staff members</figcaption>
+        </figure>
+
+        <figure>
+            <img src="courseicon.png" alt="Projects Icon">
+            <figcaption>5669+ completed projects</figcaption>
+        </figure>
+    </div>
+</body>
+</html>
